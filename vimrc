@@ -38,3 +38,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+
+" Language-specific settings
+
+" Clojure support for taglist.vim
+let tlist_clojure_settings = 'clojure;n:namespace;d:definition;f:function;p:private function;m:macro;i:inline;a:multimethod definition;b:multimethod instance;c:definition (once);s:struct;v:intern'
+
