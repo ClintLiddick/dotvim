@@ -7,6 +7,8 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
+set mouse=a
+
 let mapleader=" "
 noremap <Leader>w <C-w>
 noremap <Leader>h <C-w>h
