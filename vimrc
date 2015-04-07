@@ -1,7 +1,12 @@
+set nocompatible
+
 execute pathogen#infect()
 
 " Clint's Customization
 set number
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
