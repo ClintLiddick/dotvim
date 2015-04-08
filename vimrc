@@ -75,10 +75,13 @@ endif
 
 "" Vim Fugitive
 noremap <Leader>ga :Git add %:p<CR><CR>
+noremap <Leader>gw :Gwrite<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gd :Gdiff<CR>
 noremap <Leader>gb :Git branch<Space>
 noremap <Leader>gc :Git checkout<Space>
-
+" use the following to use Fugitive as the git mergetool
+"git config --global mergetool.fugitive.cmd 'vim -f -c "Gdiff" "$MERGED"'
+"git config --global merge.tool fugitive
 
 "" Language specific settings
