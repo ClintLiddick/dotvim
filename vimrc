@@ -20,6 +20,8 @@ noremap <Leader>h <C-w>h
 noremap <Leader>j <C-w>j
 noremap <Leader>k <C-w>k
 noremap <Leader>l <C-w>l
+noremap <Leader>q :q!<CR>
+noremap <Leader>wq :wq<CR>
 
 
 "" NERDTree
@@ -47,6 +49,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
+"" Taglist
+noremap <Leader>t :TlistToggle<CR>
+
+
 "" neocomplete settings
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -65,6 +71,14 @@ endif
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
+
+
+"" Vim Fugitive
+noremap <Leader>ga :Git add %:p<CR><CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gd :Gdiff<CR>
+noremap <Leader>gb :Git branch<Space>
+noremap <Leader>gc :Git checkout<Space>
 
 
 "" Language specific settings
