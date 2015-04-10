@@ -25,3 +25,6 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vim-browser-reload-linux"]
+	path = bundle/vim-browser-reload-linux
+	url = https://github.com/lordm/vim-browser-reload-linux.git
