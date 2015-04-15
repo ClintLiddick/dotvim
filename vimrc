@@ -4,10 +4,16 @@ execute pathogen#infect()
 
 "" Clint's Customization
 set number
+set ruler
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
+
+set modeline
+set modelines=5 " default
+
+set cursorline
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
@@ -15,14 +21,20 @@ set undodir=~/.vim/undo//
 
 set mouse=a
 
+
 let mapleader=" "
 noremap <Leader>w <C-w>
 noremap <Leader>h <C-w>h
 noremap <Leader>j <C-w>j
 noremap <Leader>k <C-w>k
 noremap <Leader>l <C-w>l
+
 noremap <Leader>q :q!<CR>
 noremap <Leader>wq :wq<CR>
+" Ctrl-s is save
+noremap <C-s> :w<CR>
+
+noremap <Leader>b :b#<CR>
 
 
 "" NERDTree
@@ -36,14 +48,48 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 
 "" Appearance
-set background=dark
+set background=light
+colorscheme lucius
+"set background=dark
+"colorscheme slate
 
 
-"" Syntastic "beginner" settings
+"" Statusline
+set statusline =[%t]    " tail of the filename
+set statusline+=%*
+
+" display a warning if fileformat isn't unix
+set statusline+=%#warningmsg#
+set statusline+=%{&ff!='unix'?'['.&ff.']':''}
+set statusline+=%*
+
+" display a warning if file encoding isn't utf-8
+set statusline+=%#warningmsg#
+set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
+set statusline+=%*
+
+" modified flag
+set statusline+=%#identifier#
+set statusline+=%m
+set statusline+=%*
+
+" read only flag
+set statusline+=%#identifier#
+set statusline+=%r
+set statusline+=%*
+
+set statusline+=%{fugitive#statusline()}
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+set statusline+=%=      " left/right separator
+set statusline+=%c      " cursor column
+set laststatus=2
+
+
+"" Syntastic "beginner" settings
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
@@ -61,8 +107,10 @@ noremap <Leader>t :TlistToggle<CR>
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+
 " tab completion
 inoremap<expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -87,5 +135,6 @@ noremap <Leader>gc :Git checkout<Space>
 " use the following to use Fugitive as the git mergetool
 "git config --global mergetool.fugitive.cmd 'vim -f -c "Gdiff" "$MERGED"'
 "git config --global merge.tool fugitive
+
 
 "" Language specific settings

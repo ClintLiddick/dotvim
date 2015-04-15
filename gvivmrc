@@ -1,0 +1,23 @@
+" ----------------------------------------
+" GUI configuration
+" ----------------------------------------
+
+" m = Menubar
+" T = Toolbar
+" t = tearoff menus
+" a = autoselect 
+" A = -"- only for modeless
+" c = use console dialogs
+" f = foreground
+" g = Grey Menu Items
+" i = Icon
+" v = buttons are vertical
+" e = tabs in gui
+" This has to be set early
+" r = show right scroll bar
+" L = show left scrollbar on split
+" i = icon
+set guioptions=fatig
+
+
+" vim: set ft=vim:
