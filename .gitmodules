@@ -28,3 +28,6 @@
 [submodule "bundle/vim-browser-reload-linux"]
 	path = bundle/vim-browser-reload-linux
 	url = https://github.com/lordm/vim-browser-reload-linux.git
+[submodule "bundle/todo.txt-vim"]
+	path = bundle/todo.txt-vim
+	url = https://github.com/freitass/todo.txt-vim.git
