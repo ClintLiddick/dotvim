@@ -49,9 +49,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 "" Appearance
 set background=light
-colorscheme lucius
+"colorscheme lucius
 "set background=dark
-"colorscheme slate
+colorscheme slate
 
 
 "" Statusline
@@ -138,3 +138,6 @@ noremap <Leader>gc :Git checkout<Space>
 
 
 "" Language specific settings
+
+"" SaltStack
+au BufNewFile,BufRead *.sls set filetype=yaml
