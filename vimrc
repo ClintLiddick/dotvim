@@ -54,10 +54,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 
 "" Appearance
+let base16colorspace=256
 set background=light
-"colorscheme lucius
-"set background=dark
-colorscheme slate
+colorscheme base16-flat
 
 
 "" Statusline
