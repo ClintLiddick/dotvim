@@ -15,9 +15,11 @@ set modelines=5 " default
 
 set cursorline
 
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
+set nobackup
+set noswapfile
+"set backupdir=~/.vim/backup//
+"set directory=~/.vim/swap//
+"set undodir=~/.vim/undo//
 
 set mouse=a
 
@@ -35,6 +37,10 @@ noremap <Leader>wq :wq<CR>
 noremap <C-s> :w<CR>
 
 noremap <Leader>b :b#<CR>
+
+" toggle horizontal centered cursor
+let &scrolloff=0
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 
 "" NERDTree
@@ -141,3 +147,6 @@ noremap <Leader>gc :Git checkout<Space>
 
 "" SaltStack
 au BufNewFile,BufRead *.sls set filetype=yaml
+
+"" Markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
