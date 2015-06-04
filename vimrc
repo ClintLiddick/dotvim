@@ -1,6 +1,7 @@
 set nocompatible
 
-execute pathogen#infect()
+call pathogen#infect()
+Helptags
 
 "" Clint's Customization
 set number
