@@ -1,6 +1,7 @@
 set nocompatible
 
-execute pathogen#infect()
+call pathogen#infect()
+Helptags
 
 "" Clint's Customization
 set number
@@ -15,9 +16,11 @@ set modelines=5 " default
 
 set cursorline
 
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
+set nobackup
+set noswapfile
+"set backupdir=~/.vim/backup//
+"set directory=~/.vim/swap//
+"set undodir=~/.vim/undo//
 
 set mouse=a
 
@@ -36,6 +39,10 @@ noremap <C-s> :w<CR>
 
 noremap <Leader>b :b#<CR>
 
+" toggle horizontal centered cursor
+let &scrolloff=0
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
 
 "" NERDTree
 noremap <Leader>n :NERDTreeToggle<CR>
@@ -48,10 +55,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 
 "" Appearance
+let base16colorspace=256
 set background=light
-colorscheme lucius
-"set background=dark
-"colorscheme slate
+colorscheme base16-flat
 
 
 "" Statusline
@@ -143,3 +149,8 @@ noremap <Leader>gc :Git checkout<Space>
 " support for taglist.vim
 let tlist_clojure_settings = 'clojure;n:namespace;d:definition;f:function;p:private function;m:macro;i:inline;a:multimethod definition;b:multimethod instance;c:definition (once);s:struct;v:intern'
 
+"" SaltStack
+au BufNewFile,BufRead *.sls set filetype=yaml
+
+"" Markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
