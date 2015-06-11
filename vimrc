@@ -100,6 +100,7 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+let g:syntastic_java_javac_config_file_enabled = 1
 
 noremap <Leader>e :Errors<CR>
 noremap <Leader>el :lclose<CR>
